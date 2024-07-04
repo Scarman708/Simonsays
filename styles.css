@@ -1,0 +1,302 @@
+body{
+	text-align: center;
+	background: hsla(0, 0%, 73%, 1);
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	color: black; 
+	overflow: hidden;
+}
+.boxbtn
+{
+	border: 3px solid black;
+	height: 200px;
+	width: 200px;
+	border-radius: 20%;
+	margin: 1rem;
+	cursor: pointer;
+	
+}
+.container{
+	display: flex;
+	height: 75vh;
+	justify-content: center;
+	align-items: center;
+}
+.red{
+	background-color:#B22222;
+
+}
+.yellow{
+	background-color: #FFD700;
+
+}
+.blue
+{
+	background-color:#191970;
+}
+.green{
+	background-color: #006400;
+}
+.flash{
+	background-color: white;
+	box-shadow: 1px 1px white;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.userflash {
+  animation: flash 0.2s;
+}
+
+
+
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  background-color: #fefe;
+  margin: 10% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 80%; 
+  max-height: 70%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#restartButton {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+
+
+
+h2{
+	margin-top: 50px;
+}
+
+.header {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5); 
+  padding: 20px 10px;
+  display: flex;
+ justify-content: space-between;
+}
+
+.header h1 {
+	display: inline-block;
+	text-align: left;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1;
+  color: white;
+}
+
+.header h1:hover {
+
+  color: black;
+}
+
+.header-right {
+  float: right;
+}
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 64px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #73C0FC;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  left: 2px;
+  bottom: 2px;
+  z-index: 2;
+  background-color: #e8e8e8;
+  transition: .4s;
+}
+
+.sun svg {
+  position: absolute;
+  top: 6px;
+  left: 36px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+.moon svg {
+  fill: #73C0FC;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+/* .switch:hover */.sun svg {
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+ 
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* .switch:hover */.moon svg {
+  animation: tilt 5s linear infinite;
+}
+
+@keyframes tilt {
+ 
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-10deg);
+  }
+
+  75% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.input:checked + .slider {
+  background-color: #183153;
+}
+
+.input:focus + .slider {
+  box-shadow: 0 0 1px #183153;
+}
+
+.input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+.sun, .moon {
+  display: inline-block;
+  margin-right: 10px; 
+}
+
+/* Dark mode specific styles */
+
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.header.dark-mode {
+  background-color: #333333;
+}
+
+.dark-mode .sun {
+  display: none;
+}
+
+.dark-mode .moon {
+  display: inline-block;
+}
+
+.dark-mode .slider {
+  background-color: #888;
+}
+
+.dark-mode .slider:before {
+  background-color: #cccccc;
+}
+
+.dark-mode input:checked + .slider {
+  background-color: grey; 
+}
+
+
+.dark-mode input:checked + .slider:before {
+  transform: translateX(30px); 
+}
+
+.dark-mode .modal-content{
+	color: black;
+}
+
+.dark-mode .header h1:hover{
+	color: white;
+}
