@@ -2,6 +2,9 @@
 
 A web-based Simon Says game with a light/dark theme toggle.
 
+## Live demo:
+https://scarman708.github.io/Simonsays/
+
 ## Table of Contents
 
 - [Introduction](#introduction)
